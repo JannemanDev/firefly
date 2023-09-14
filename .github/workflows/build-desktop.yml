@@ -95,7 +95,10 @@ jobs:
             - name: Set productName
               run: node scripts/fix-productName.js
               working-directory: packages/desktop
-
+            
+            - name: Install Yarn
+              run: npm install -g yarn
+   
             - name: Bundle desktop JS
               run: yarn build:${STAGE}
               working-directory: packages/desktop
@@ -168,3 +171,7 @@ jobs:
                   path: |
                       packages/desktop/out/firefly-desktop*
                       packages/desktop/out/shimmer*
+                      
+            - name: Uninstall Yarn
+              if: always()
+              run: npm uninstall -g yarn
