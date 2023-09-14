@@ -98,6 +98,7 @@ jobs:
             
             - name: Install Yarn
               run: npm install -g yarn
+              if: matrix.os == 'ubuntu-20.04'
    
             - name: Bundle desktop JS
               run: yarn build:${STAGE}
@@ -175,3 +176,4 @@ jobs:
             - name: Uninstall Yarn
               if: always()
               run: npm uninstall -g yarn
+              if: matrix.os == 'ubuntu-20.04'
