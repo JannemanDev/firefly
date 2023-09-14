@@ -223,7 +223,7 @@
                     amount,
                     address: receiveAddress,
                     remainder_value_strategy: {
-                        strategy: 'ChangeAddress',
+                        strategy: 'ReuseAddress',
                     },
                     indexation: { index: tag ? tag : 'firefly', data: convertStringToUtf8Array(data) },
                 },
