@@ -22,7 +22,7 @@ on:
 
 jobs:
     build:
-        runs-on: ${{ matrix.os }}
+        runs-on: self-hosted
         if: ${{ always() }}
         strategy:
             matrix:
