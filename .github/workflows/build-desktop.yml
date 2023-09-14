@@ -83,9 +83,9 @@ jobs:
               run: echo "DEBUG=electron-builder" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
               if: matrix.os == 'windows-2019'
 
-            - name: Install dependencies
+            #- name: Install dependencies
               # Increase network timeout threshold to reduce build failures on Windows
-              run: yarn --network-timeout 1000000
+              #run: yarn --network-timeout 1000000
 
             - name: Install Sentry CLI
               # Yarn has issues putting binaries in the PATH on Windows
