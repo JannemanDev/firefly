@@ -53,7 +53,7 @@ jobs:
                   profile: minimal
 
             - name: Install LLVM and Clang (Windows) # required for bindgen to work, see https://github.com/rust-lang/rust-bindgen/issues/1797
-              uses: KyleMayes/install-llvm-action@32c4866ebb71e0949e8833eb49beeebed48532bd
+              uses: KyleMayes/install-llvm-action@c135b3937686fd69c2651507aabc9925a8f9eee8
               if: matrix.os == 'windows-2019'
               with:
                   version: '11.0'
@@ -174,6 +174,5 @@ jobs:
                       packages/desktop/out/shimmer*
                       
             - name: Uninstall Yarn
-              if: always()
-              run: npm uninstall -g yarn
               if: matrix.os == 'ubuntu-20.04'
+              run: npm uninstall -g yarn
