@@ -156,10 +156,10 @@ jobs:
               working-directory: packages/desktop/out
               if: matrix.os == 'macos-11'
 
-            - name: Compute checksums (Windows)
-              run: Get-ChildItem "." -Filter firefly-desktop* | Foreach-Object { $(Get-FileHash -Path $_.FullName -Algorithm SHA256).Hash | Set-Content ($_.FullName + '.sha256') }
-              working-directory: packages/desktop/out
-              if: matrix.os == 'windows-2019'
+#            - name: Compute checksums (Windows)
+#              run: Get-ChildItem "." -Filter firefly-desktop* | Foreach-Object { $(Get-FileHash -Path $_.FullName -Algorithm SHA256).Hash | Set-Content ($_.FullName + '.sha256') }
+#              working-directory: packages/desktop/out
+#              if: matrix.os == 'windows-2019'
 
             - name: Upload artifacts
               uses: actions/upload-artifact@v2
