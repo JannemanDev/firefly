@@ -117,13 +117,13 @@ jobs:
               working-directory: packages/desktop
               if: matrix.os == 'macos-11'
 
-            - name: Build Electron app (Windows)
-              run: yarn compile:${env:STAGE}:win
-              env:
-                  CSC_LINK: ${{ secrets.WIN_CERT_BASE64 }}
-                  CSC_KEY_PASSWORD: ${{ secrets.WIN_CERT_PASSWORD }}
-              working-directory: packages/desktop
-              if: matrix.os == 'windows-2019'
+#            - name: Build Electron app (Windows)
+#              run: yarn compile:${env:STAGE}:win
+#              env:
+#                  CSC_LINK: ${{ secrets.WIN_CERT_BASE64 }}
+#                  CSC_KEY_PASSWORD: ${{ secrets.WIN_CERT_PASSWORD }}
+#              working-directory: packages/desktop
+#              if: matrix.os == 'windows-2019'
 
             - name: Build Electron app (Linux)
               run: yarn compile:${STAGE}:linux
